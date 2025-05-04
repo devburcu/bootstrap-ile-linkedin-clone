@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LinkedIn Klonu</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @media (max-width: 476px) {
+            .form-input {
+                width: 60vw;
+            }
+        }
+
+        .collapse.show+.btn-devam {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-white shadow-sm position-fixed py-0" style="width: 100%; z-index: 1;">
+        <div class="container" style="max-width: 1400px;">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Logo"
+                    width="35">
+            </a>
+            <div class="search-bar d-flex align-items-center px-2 py-1 rounded"
+                style="width: 250px;height: 40px;background-color: #eef3f8;">
+                <i class="bi bi-search text-secondary me-2"></i>
+                <input type="text" class="form-control border-0 bg-transparent p-0" placeholder="Arama yap">
+            </div>
+            <div class="d-sm-none d-flex align-items-center ms-3">
+                <i class="bi bi-chat-dots-fill fa-2x"></i>
+            </div>
+
+            <!-- Menüler (Hamburger Menu ile Responsive) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto d-flex align-items-center gap-5">
+                    <!-- Ana Sayfa -->
+                    <li class="nav-item">
+                        <a class="nav-link active text-center p-0" href="#">
+                            <div><i class="bi bi-house-door-fill fs-3"></i></div>
+                            <p class="d-none d-lg-block m-0">Ana Sayfa</p>
+                        </a>
+                    </li>
+
+                    <!-- Ağım -->
+                    <li class="nav-item">
+                        <a class="nav-link text-center p-0" href="#">
+                            <div><i class="bi bi-people-fill fs-3"></i></div>
+                            <p class="d-none d-lg-block m-0">Ağım</p>
+                        </a>
+                    </li>
+
+                    <!-- İş İlanları -->
+                    <li class="nav-item">
+                        <a class="nav-link text-center p-0" href="#">
+                            <div><i class="bi bi-briefcase-fill fs-3"></i></div>
+                            <p class="d-none d-lg-block m-0">İş İlanları</p>
+                        </a>
+                    </li>
+
+                    <!-- Mesajlar -->
+                    <li class="nav-item">
+                        <a class="nav-link text-center p-0" href="#">
+                            <div><i class="bi bi-chat-dots-fill fs-3"></i></div>
+                            <p class="d-none d-lg-block m-0">Mesajlaşma</p>
+                        </a>
+                    </li>
+
+                    <!-- Bildirimler -->
+                    <li class="nav-item">
+                        <a class="nav-link text-center p-0" href="#" style="position: relative;">
+                            <div><i class="bi bi-bell-fill fs-3"></i></div>
+                            <p class="d-none d-lg-block m-0">Bildirimler</p>
+                            <p class="notification d-none d-lg-block"
+                                style="position: absolute;left: 36px;top: 0px;background-color: rgb(192, 0, 0);width: 20px;border-radius: 50%;color: white;font-weight: 700;">
+                                1</p>
+                        </a>
+                    </li>
+
+                    <!-- Profil -->
+                    <li class="nav-item">
+                        <a class="nav-link text-center p-0" href="#">
+                            <div><img
+                                    src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1751500800&v=beta&t=8bLqH9WFhL8In12XN3GkFzQN4n4nFPoFCQOntz7uLl0"
+                                    class="rounded-circle  p-1 mt-2" style="width: 40px; height: 40px;" alt="Profil">
+                            </div>
+                            <p class="d-none d-lg-block m-0 mb-1">Ben</p>
+                        </a>
+                    </li>
+
+                    <!-- Dikey çizgi -->
+                    <div class="border-start d-none d-md-block" style="height: 78px;"></div>
+
+                    <!-- İş için -->
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link text-center p-0" href="#">
+                            <div><i class="fas fa-th fa-2x"></i></div>
+                            <small class="d-none d-lg-block m-0">İş için</small>
+                        </a>
+                    </li>
+
+                    <!-- Premium Deneme -->
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link text-center" href="#" style="text-decoration: underline; color: #915907;">
+                            0 TRY ile Premium'u <span class="nav-link text-center"
+                                style="text-decoration: underline; color: #915907;">deneyin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="bg-light pt-5">
+        <div class="container" style="max-width: 1400px;">
+            <div class="row">
+                <div class="col-12 col-md-3 mt-5" style="position: relative;">
+                    <img src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" class="rounded-top"
+                        alt="">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1751500800&v=beta&t=8bLqH9WFhL8In12XN3GkFzQN4n4nFPoFCQOntz7uLl0"
+                        class="d-block d-md-none d-lg-block rounded-circle p-2 mt-2"
+                        style="width: 100px; height: 100px; position: absolute; left: 40px; top: 20px;"
+                        alt="Profil Foto">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1752105600&v=beta&t=ivtmqC_e1vwGP1EjJgHKHhzG1EkmizPPHaAy0sW3GpE" 
+                        class="d-none d-md-block d-lg-none rounded-circle p-2 mt-2" 
+                        style="width: 90px; height: 90px; position: absolute; left: 40px; top: -10px;"
+                        alt="Profil Foto">
+                    <div class="bg-white ps-4 mb-3 rounded-bottom">
+                        <h3 class="pt-5">Burcu Pirim</h3>
+                        <small>Jr. Frontend Developer</small><br>
+                        <small class="text-muted">Kadıköy, İstanbul</small><br>
+                        <div class="btn-group pb-4 mt-2" role="group">
+                            <div class="p-1 bg-light rounded">
+                                <button type="button" class="btn btn-light" style="border: 1px dashed #7a7a7a;">
+                                    <i class="fa-regular fa-plus text-muted"></i>
+                                    <span class="text-muted">Deneyim</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded d-none d-sm-block p-2 mb-3">
+                        <div class="m-3 d-flex justify-content-between align-items-center">
+                            <a href="#" class="text-dark text-decoration-none"><strong>Profil
+                                    görüntüleyenler</strong></a>
+                            <a href="#" class="text-decoration-none"><span>9</span></a>
+                        </div>
+                        <div class="m-3">
+                            <a href="#" class="text-dark text-decoration-none"><strong>Tüm analizleri
+                                    görüntüle</strong></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded d-none d-sm-block p-4 py-2 mb-3">
+                        <div>
+                            <span class="text-muted">İşe alım sürecinizi dönüştürün</span>
+                        </div>
+                        <div class="d-flex me-4">
+                            <div
+                                style="width: 16px; height: 16px; margin-top: 6px; border-radius: 3px; background-color: #da9226;">
+                            </div>
+                            <a href="#" class="text-dark text-decoration-none ps-2"><strong>0 TRY ile Recruiter Lite’ı
+                                    deneyin</strong></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded d-none d-sm-block ps-4 pt-4">
+                        <a href="#" class="d-flex text-dark text-decoration-none pb-1">
+                            <i class="bi bi-bookmark-fill pe-3"></i>
+                            <p><strong>Kaydedilen ögeler</strong></p>
+                        </a>
+                        <a href="#" class="d-flex text-dark text-decoration-none pb-1">
+                            <i class="fa-solid fa-users pe-3 mt-2"></i>
+                            <p><strong>Gruplar</strong></p>
+                        </a>
+                        <a href="#" class="d-flex text-dark text-decoration-none pb-1">
+                            <i class="bi bi-newspaper pe-3"></i>
+                            <p><strong>Haber bültenleri</strong></p>
+                        </a>
+                        <a href="#" class="d-flex text-dark text-decoration-none">
+                            <i class="bi bi-calendar-event pe-3"></i>
+                            <p><strong>Etkinlikler</strong></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9 mt-5">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="bg-white rounded">
+                                <div class="p-3 mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <a href="#">
+                                            <img src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1751500800&v=beta&t=8bLqH9WFhL8In12XN3GkFzQN4n4nFPoFCQOntz7uLl0"
+                                                class="rounded-circle p-2 mt-2" style="width: 80px; height: 80px;"
+                                                alt="Profil Foto">
+                                        </a>
+                                        <button class="btn btn-light flex-grow-1 text-start card rounded-pill"
+                                            data-bs-toggle="modal" data-bs-target="#postModal"
+                                            style="height: 60px; line-height: 45px;">
+                                            <strong class="text-secondary ps-2">Gönderi başlatın</strong>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-around text-muted">
+                                        <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i
+                                                class="bi bi-play-btn fa-2x text-success text me-3"></i>
+                                            <strong>Video</strong></a>
+                                        <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i
+                                                class="bi bi-image fa-2x text-primary me-3"></i><strong>Fotoğraf</strong></a>
+                                        <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i
+                                                class="bi bi-pencil-square fa-2x text-danger me-3"></i><strong>Yazı
+                                                yaz</strong></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto my-1" style="width: 65%; height: 1px; background-color: #ccc;">
+                                </div>
+                                <span class="text-muted me-2">Sıralama ölçütü: <strong>En Önemli<i
+                                            class="bi bi-caret-down-fill"></i></strong></span>
+                            </div>
+
+                            <div class="bg-white rounded mb-3">
+                                <div class="m-3">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="d-flex">
+                                            <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGy0uPdV2KwFw/company-logo_100_100/company-logo_100_100/0/1692690960636/javascript_developer_logo?e=1751500800&v=beta&t=HYUULXEZsPi3CDPju9a5ZC9CNGb5RYhmB4FADQCiz4w"
+                                                alt="user-photo" style="width: 50px; height: 50px;" class="mt-2">
+                                            <div class="ms-2 d-flex flex-column">
+                                                <a href="#"
+                                                    class="text-decoration-none text-dark mt-2"><strong>JavaScript
+                                                        Developer</strong></a>
+                                                <a href="#" class="text-muted text-decoration-none">1.346.602
+                                                    takipçi</a>
+                                                <span class="text-muted mb-2">1 gün
+                                                    <i class="bi bi-dot"></i>
+                                                    <i class="bi bi-globe"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm btn-white rounded-circle m-1">
+                                                <i class="bi bi-three-dots fa-2x"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-white rounded-circle m-1">
+                                                <i class="bi bi-x-lg fa-2x"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQH1gtnQOuAbIw/feedshare-shrink_800/B4EZaP1qM5HIAg-/0/1746169935677?e=1749081600&v=beta&t=ooobd9-ujaNjVdjt9qFjRg7toBQW6x6P0YvBEBogbVk"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between mb-3">
+                                        <div>
+                                            <i
+                                                class="bi bi-emoji-smile-fill bg-warning px-2 py-1 me-2 text-white rounded-circle"></i>
+                                            <span class="text-muted">4.881</span>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="text-decoration-none text-muted">106 yorum</a>
+                                            <i class="bi bi-dot"></i>
+                                            <a href="#" class="text-decoration-none text-muted">146 paylaşım</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-auto my-1" style="width: 95%; height: 1px; background-color: #ccc;">
+                                </div>
+                                <div class="d-flex justify-content-between text-muted p-2">
+                                    <!-- Beğen -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-hand-thumbs-up"></i>
+                                        <span class="fw-semibold">Beğen</span>
+                                    </button>
+
+                                    <!-- Yorum Yap -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-chat-text"></i>
+                                        <span class="fw-semibold">Yorum Yap</span>
+                                    </button>
+
+                                    <!-- Paylaş -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-share"></i>
+                                        <span class="fw-semibold">Paylaş</span>
+                                    </button>
+
+                                    <!-- Gönder -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-send"></i>
+                                        <span class="fw-semibold">Gönder</span>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="bg-white rounded mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <img src="https://cdn1.ntv.com.tr/gorsel/BSnyP8u5bkeQd8Ho8DTrTw.jpg?width=960&mode=crop&scale=both"
+                                            alt="user-photo" style="width: 30px; height: 30px;"
+                                            class="rounded-circle m-3">
+                                        <a href="#" class="text-decoration-none text-dark"><strong>Emine YILMAZ</strong>
+                                        </a><span class="text-muted">bunu beğendi</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-white rounded-circle m-1">
+                                            <i class="bi bi-three-dots fa-2x"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-white rounded-circle m-1">
+                                            <i class="bi bi-x-lg fa-2x"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mx-auto my-1" style="width: 95%; height: 1px; background-color: #ccc;">
+                                </div>
+
+                                <div class="m-3">
+                                    <div class="d-flex">
+                                        <img src="https://media.licdn.com/dms/image/v2/C4D0BAQG2LDinZkdHtg/company-logo_100_100/company-logo_100_100/0/1677068633127/giriimci_kafas_logo?e=1751500800&v=beta&t=I8yJAT4c0JwdyyRI7Htmbqb0jyEhR5A7QYtWr5PgWqI"
+                                            alt="user-photo" style="width: 50px; height: 50px;">
+                                        <div class="ms-2 d-flex flex-column">
+                                            <a href="#" class="text-decoration-none text-dark"><strong>Girişimci
+                                                    Kafası</strong></a>
+                                            <a href="#" class="text-muted text-decoration-none">1.190.205 takipçi</a>
+                                            <a href="#" class="text-decoration-none">Marketi ziyaret edin</a>
+                                            <span class="text-muted mb-2">5 saat
+                                                <i class="bi bi-dot"></i>
+                                                <i class="bi bi-globe"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p>çok doğru</p>
+                                    <div>
+                                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQFymuCkTh7sbg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1726918763344?e=1749081600&v=beta&t=XW17iSl99lVQvmx2ckFtyTLViiTTV_tUrNdH00nBE-g"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between mb-3">
+                                        <div>
+                                            <i
+                                                class="bi bi-heart-fill bg-danger px-2 py-1 me-2 text-white rounded-circle"></i>
+                                            <span class="text-muted">518</span>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="text-decoration-none text-muted">2 yorum</a>
+                                            <i class="bi bi-dot"></i>
+                                            <a href="#" class="text-decoration-none text-muted">41 paylaşım</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-auto my-1" style="width: 95%; height: 1px; background-color: #ccc;">
+                                </div>
+                                <div class="d-flex justify-content-between text-muted p-2">
+                                    <!-- Beğen -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-hand-thumbs-up"></i>
+                                        <span class="fw-semibold">Beğen</span>
+                                    </button>
+
+                                    <!-- Yorum Yap -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-chat-text"></i>
+                                        <span class="fw-semibold">Yorum Yap</span>
+                                    </button>
+
+                                    <!-- Paylaş -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-share"></i>
+                                        <span class="fw-semibold">Paylaş</span>
+                                    </button>
+
+                                    <!-- Gönder -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-send"></i>
+                                        <span class="fw-semibold">Gönder</span>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="bg-white rounded mb-3">
+
+
+                                <div class="m-3">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="d-flex">
+                                            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQEzt1XBN_yr-A/company-logo_100_100/company-logo_100_100/0/1682007445688/patikadev_logo?e=1751500800&v=beta&t=qZJUpzT6ZyRTHSO8fvTvaHsw4CQ5P0aiq5eJ9jXeYck"
+                                                alt="user-photo" style="width: 50px; height: 50px;">
+                                            <div class="ms-2 d-flex flex-column">
+                                                <a href="#"
+                                                    class="text-decoration-none text-dark mt-2"><strong>Patika.dev</strong></a>
+                                                <a href="#" class="text-muted text-decoration-none">96.584 takipçi</a>
+                                                <span class="text-muted mb-2">3 hafta
+                                                    <i class="bi bi-dot"></i>
+                                                    <i class="bi bi-globe"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm btn-white rounded-circle m-1">
+                                                <i class="bi bi-three-dots fa-2x"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-white rounded-circle m-1">
+                                                <i class="bi bi-x-lg fa-2x"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p>Frontend geliştirici olmak isteyenler için son gün!<i
+                                            class="bi bi-alarm-fill text-danger ms-2"></i></p>
+                                    <p>Patika+ Frontend Bootcamp başvuruları bugün kapanıyor.</p>
+
+                                    <!-- Detay metin -->
+                                    <div class="collapse" id="detayMetin">
+                                        <p>
+                                            <i class="bi bi-pc-display-horizontal mx-3"></i>4 ayda yoğun ve uygulamalı
+                                            eğitim
+                                        </p>
+                                        <p>
+                                            <i class="fas fa-dumbbell text-secondary mx-3"></i>Birebir mentor desteği
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-globe text-primary mx-3"></i>%100 online
+                                        </p>
+                                        <p>
+                                            <i class="bi bi-lightbulb text-warning mx-3"></i>Gerçek projelerle GitHub
+                                            portföyü oluşturma
+                                        </p>
+                                        <p>Bugün, kariyerin için gerçek bir adım atma günü olabilir.</p>
+                                        <a href="https://lnkd.in/dnyfxFdg" class="text-decoration-none"><i
+                                                class="bi bi-link-45deg text text-secondary"></i>https://lnkd.in/dnyfxFdg</a>
+                                    </div>
+
+                                    <!-- Devamını oku butonu -->
+                                    <a class="btn btn-link p-0 btn-devam text-muted text-decoration-none"
+                                        data-bs-toggle="collapse" href="#detayMetin" role="button" aria-expanded="false"
+                                        aria-controls="detayMetin">
+                                        ...daha fazla
+                                    </a>
+                                    <div>
+                                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHLQPOpyttUdA/feedshare-shrink_800/B4DZYQIH1ZH4Ag-/0/1744027287994?e=1749081600&v=beta&t=3t1rThretrNWnAP15sKfSSFygLItXfKYjgcNzhwGKbc"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between mb-3">
+                                        <div>
+                                            <i
+                                                class="bi bi-hand-thumbs-up-fill bg-warning px-2 py-1 me-2 text-white rounded-circle"></i>
+                                            <span class="text-muted">12 diğer kişi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-auto my-1" style="width: 95%; height: 1px; background-color: #ccc;">
+                                </div>
+                                <div class="d-flex justify-content-between text-muted p-2">
+                                    <!-- Beğen -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-hand-thumbs-up"></i>
+                                        <span class="fw-semibold">Beğen</span>
+                                    </button>
+
+                                    <!-- Yorum Yap -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-chat-text"></i>
+                                        <span class="fw-semibold">Yorum Yap</span>
+                                    </button>
+
+                                    <!-- Paylaş -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-share"></i>
+                                        <span class="fw-semibold">Paylaş</span>
+                                    </button>
+
+                                    <!-- Gönder -->
+                                    <button
+                                        class="btn btn-white d-flex align-items-center gap-1 flex-fill justify-content-center py-2 hover-effect">
+                                        <i class="bi bi-send"></i>
+                                        <span class="fw-semibold">Gönder</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 d-none d-lg-block">
+                            <div class="bg-white rounded">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="fs-3 ps-3 pt-3">LinkeIn Haberler</h6>
+                                    <i class="bi bi-info-square-fill me-3"></i>
+                                </div>
+                                <p class="text-muted ps-3 fs-5 mb-0">Öne çıkan hikayeler</p>
+                                <!-- Liste -->
+                                <div class="list-group">
+                                    <!-- İlk 5 haber -->
+                                    <a href="#" class="list-group-item list-group-item-action border-0">
+                                        <div><strong>Warren Buffett plans to retire</strong></div>
+                                        <small class="text-muted">1s önce</small> <i class="bi bi-dot"></i>
+                                        <small class="text-muted">127.068 okuyucu</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action border-0">
+                                        <div><strong>Bezos to sell $4.8B Amazon stock</strong></div>
+                                        <small class="text-muted">3s önce</small> <i class="bi bi-dot"></i>
+                                        <small class="text-muted">29.030 okuyucu</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action border-0">
+                                        <div><strong>Harvard may lose tax status</strong></div>
+                                        <small class="text-muted">3s önce</small> <i class="bi bi-dot"></i>
+                                        <small class="text-muted">17.784 okuyucu</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action border-0">
+                                        <div><strong>Temu stops China shipments to US</strong></div>
+                                        <small class="text-muted">20a önce</small> <i class="bi bi-dot"></i>
+                                        <small class="text-muted">12.216 okuyucu</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action border-0">
+                                        <div><strong>Wendy's slashes 2025 sales outlook</strong></div>
+                                        <small class="text-muted">3s önce</small> <i class="bi bi-dot"></i>
+                                        <small class="text-muted">6.201 okuyucu</small>
+                                    </a>
+
+                                    <!-- Kalanlar collapse içinde -->
+                                    <div class="collapse" id="dahaFazlaHaber">
+                                        <a href="#" class="list-group-item list-group-item-action border-0">
+                                            <div><strong>Apple, Anthropic team on AI code</strong></div>
+                                            <small class="text-muted">20a önce</small> <i class="bi bi-dot"></i>
+                                            <small class="text-muted">3.245 okuyucu</small>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action border-0">
+                                            <div><strong>Hiring held up in April</strong></div>
+                                            <small class="text-muted">1a önce</small> <i class="bi bi-dot"></i>
+                                            <small class="text-muted">77.445 okuyucu</small>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action border-0">
+                                            <div><strong>Extra-early wakeup trend takes off</strong></div>
+                                            <small class="text-muted">10s önce</small> <i class="bi bi-dot"></i>
+                                            <small class="text-muted">11.103 okuyucu</small>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action border-0">
+                                            <div><strong>Grads see fresh competition from AI</strong></div>
+                                            <small class="text-muted">1a önce</small> <i class="bi bi-dot"></i>
+                                            <small class="text-muted">7.385 okuyucu</small>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action border-0">
+                                            <div><strong>Uber, Lyft debut senior-friendly apps</strong></div>
+                                            <small class="text-muted">9s önce</small> <i class="bi bi-dot"></i>
+                                            <small class="text-muted">6.765 okuyucu</small>
+                                        </a>
+                                    </div>
+
+                                    <!-- Daha fazla butonu -->
+                                    <a class="btn btn-link text-decoration-none text-dark text-start bg-light ps-2 ms-3 mb-4 btn-devam"
+                                        style="width: 200px;" data-bs-toggle="collapse" href="#dahaFazlaHaber"
+                                        role="button" aria-expanded="false" aria-controls="dahaFazlaHaber">
+                                        Daha fazla göster <i class="bi bi-caret-down-fill"></i>
+                                    </a>
+
+                                    <p class="text-muted ps-3 fs-5 mb-0">Bugünün bulmacası</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-3">
+                                            <img src="https://static.licdn.com/aero-v1/sc/h/76par5mhgg2pbdwqc7apsbsnh"
+                                                alt="">
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <a href="#" class=" text-decoration-none"><strong class="text-dark">Zip
+                                                        - hızlı zeka oyunu</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="#" class="text-decoration-none"><span class="text-muted">En
+                                                        fazla 60 saniyede çözün!</span></a>
+                                            </div>
+                                            <div class="d-flex">
+                                                <i class="bi bi-eye-slash fa-2x pe-1"></i>
+
+                                                <a href="#" class=" text-decoration-none"><span class="text-muted">Skoru
+                                                        sadece siz görebilirsiniz</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="position-sticky" style="top: 85px;">
+                                <img src="https://media.licdn.com/media/AAYABATPAAgAAQAAAAAAAKwYrfHUPkoBQGmwnaG71Ps_5Q.png"
+                                    alt="" class="img-fluid mt-3 mb-5 rounded">
+                                <div class="text-center">
+                                    <a href="#" class="text-decoration-none"><small
+                                            class="text-muted px-3" style="line-height: 3;">Hakkında</small></a>
+                                    <a href="#" class="text-decoration-none"><small
+                                            class="text-muted px-3" style="line-height: 3;">Erişebilirlik</small></a><br>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Yardım
+                                            Merkezi</small></a>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Gizlilik ve
+                                            Koşullar <i class="bi bi-caret-down-fill"></i></small></a><br>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Reklam
+                                            Tercihleri</small></a>
+                                    <a href="#" class="text-decoration-none"><small
+                                            class="text-muted px-3" style="line-height: 3;">Reklam</small></a><br>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Ticari
+                                            Hizmetler <i class="bi bi-caret-down-fill"></i></small></a><br>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">LinkedIn
+                                            uygulamasını yükle</small></a>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Daha
+                                            Fazla</small></a>
+                                </div>
+                                <div class="text-center">
+                                    <img src="https://static.licdn.com/aero-v1/sc/h/aahlc8ivbnmk0t3eyz8as5gvr" alt="">
+                                    <small>LinkedIn Corporation &copy 2025</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS (opsiyonel) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
