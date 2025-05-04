@@ -19,6 +19,13 @@
         .collapse.show+.btn-devam {
             display: none;
         }
+        .chat-box{
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            width: 300px;
+            height: 65px;
+        }
     </style>
 
 </head>
@@ -131,8 +138,8 @@
                         class="d-block d-md-none d-lg-block rounded-circle p-2 mt-2"
                         style="width: 100px; height: 100px; position: absolute; left: 40px; top: 20px;"
                         alt="Profil Foto">
-                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1752105600&v=beta&t=ivtmqC_e1vwGP1EjJgHKHhzG1EkmizPPHaAy0sW3GpE" 
-                        class="d-none d-md-block d-lg-none rounded-circle p-2 mt-2" 
+                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1752105600&v=beta&t=ivtmqC_e1vwGP1EjJgHKHhzG1EkmizPPHaAy0sW3GpE"
+                        class="d-none d-md-block d-lg-none rounded-circle p-2 mt-2"
                         style="width: 90px; height: 90px; position: absolute; left: 40px; top: -10px;"
                         alt="Profil Foto">
                     <div class="bg-white ps-4 mb-3 rounded-bottom">
@@ -600,23 +607,29 @@
                                 <img src="https://media.licdn.com/media/AAYABATPAAgAAQAAAAAAAKwYrfHUPkoBQGmwnaG71Ps_5Q.png"
                                     alt="" class="img-fluid mt-3 mb-5 rounded">
                                 <div class="text-center">
-                                    <a href="#" class="text-decoration-none"><small
-                                            class="text-muted px-3" style="line-height: 3;">Hakkında</small></a>
-                                    <a href="#" class="text-decoration-none"><small
-                                            class="text-muted px-3" style="line-height: 3;">Erişebilirlik</small></a><br>
-                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Yardım
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Hakkında</small></a>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Erişebilirlik</small></a><br>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Yardım
                                             Merkezi</small></a>
-                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Gizlilik ve
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Gizlilik ve
                                             Koşullar <i class="bi bi-caret-down-fill"></i></small></a><br>
-                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Reklam
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Reklam
                                             Tercihleri</small></a>
-                                    <a href="#" class="text-decoration-none"><small
-                                            class="text-muted px-3" style="line-height: 3;">Reklam</small></a><br>
-                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Ticari
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Reklam</small></a><br>
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Ticari
                                             Hizmetler <i class="bi bi-caret-down-fill"></i></small></a><br>
-                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">LinkedIn
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">LinkedIn
                                             uygulamasını yükle</small></a>
-                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3" style="line-height: 3;">Daha
+                                    <a href="#" class="text-decoration-none"><small class="text-muted px-3"
+                                            style="line-height: 3;">Daha
                                             Fazla</small></a>
                                 </div>
                                 <div class="text-center">
@@ -625,16 +638,37 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+            <!-- Sabit Mesaj Kutusu -->
+            <div class="d-none d-sm-block">
+                <div class="chat-box bg-white border rounded-top shadow d-flex align-items-center justify-content-between px-3 py-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E03AQGgqmaY_V9deQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1647183030382?e=1752105600&v=beta&t=ivtmqC_e1vwGP1EjJgHKHhzG1EkmizPPHaAy0sW3GpE" alt="Profil Foto" class="rounded-circle" style="width: 30px;">
+                        <span class="fw-bold">Mesajlaşma</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 text-secondary">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <i class="fas fa-pen"></i>
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div style="width: 10px; 
+                    height: 10px; 
+                    background-color: green; 
+                    border-radius: 50%; 
+                    position: absolute;
+                    left: 37px;
+                    top: 37px;
+                    border: 1px solid white;"></div>
+                </div>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Bootstrap JS (opsiyonel) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Bootstrap JS (opsiyonel) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
